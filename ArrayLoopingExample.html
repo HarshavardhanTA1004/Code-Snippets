@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Looping through arrays inside arrays.</p>
+
+<p id="example"></p>
+
+<script>
+var myDetails, i, j, x = "";
+myDetails = {
+  "name":"Harshavardhan",
+  "age":27,
+  "skillsets": [
+    {"name":"Testing", "technology":["Manual", "UIAutomation", "MobAutomation"]},
+    {"name":"Development", "technology":["HTML", "CSS", "JS","AngularJs"]},   
+  ]
+}
+for (i in myDetails.skillsets) {
+  x += "<h2>" + myDetails.skillsets[i].name + "</h2>";
+  for (j in myDetails.skillsets[i].technology) {
+    x += myDetails.skillsets[i].technology[j] + "<br>";
+  }
+}
+document.getElementById("example").innerHTML = x;
+</script>
+
+</body>
+</html>
